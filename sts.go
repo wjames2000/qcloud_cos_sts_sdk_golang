@@ -116,7 +116,7 @@ func GetCredential() string {
 	splitIndex := strings.Index(Conf.Bucket, "-")
 	bucketName := Conf.Bucket[:splitIndex]
 	appid := Conf.Bucket[splitIndex+1:]
-	policyEncode := fmt.Sprintf("{\"statement\":[{\"action\":[\"name/cos:PutObject\"],\"effect\":\"allow\",\"resource\":[\"qcs::cos:%s:uid/%s:prefix//%s/%s/%s\"]}],\"version\":\"2.0\"}", Region, appid, appid, bucketName, AllowPrefix)
+	policyEncode := fmt.Sprintf("{\"statement\":[{\"action\":[\"name/cos:PutObject\"],\"effect\":\"allow\",\"resource\":[\"qcs::cos:%s:uid/%s:prefix//%s/%s/%s\"]}],\"version\":\"2.0\"}", Conf.Region, appid, appid, bucketName, Conf.AllowPrefix)
 	rdata := make(map[string]string)
 	rdata["Region"] = Conf.Region
 	rdata["SecretId"] = Conf.SecretId
