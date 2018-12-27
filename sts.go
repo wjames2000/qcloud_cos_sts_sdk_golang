@@ -1,4 +1,4 @@
-package main
+package qcloud_cos_sts_sdk_golang
 
 import (
 	"crypto/hmac"
